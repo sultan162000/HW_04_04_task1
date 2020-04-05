@@ -113,7 +113,7 @@ namespace HW_04_04_task2
                             System.Console.WriteLine(myBalance+" "+myCurrrens);
                         }else if(myCurrrens == rubOfLatin){
                             myCurrrens = eurOfLatin;
-                            myBalance = myBalance/82.56;
+                            myBalance = myBalance/82.54;
                             myBalance=Math.Round(myBalance, 5);
                             System.Console.WriteLine(myBalance+" "+myCurrrens);
                         }
@@ -125,6 +125,14 @@ namespace HW_04_04_task2
                         }else if(myCurrrens == usdOfLatin){
                             myCurrrens = rubOfLatin;
                             myBalance = myBalance*76.41;
+                            System.Console.WriteLine(myBalance+" "+myCurrrens);
+                        }else if(myCurrrens == smnOfLatin){
+                            myCurrrens = rubOfLatin;
+                            myBalance = myBalance/0.1338;
+                            System.Console.WriteLine(myBalance+" "+myCurrrens);
+                        }else if(myCurrrens == eurOfLatin){
+                            myCurrrens = rubOfLatin;
+                            myBalance = myBalance*82.54;
                             System.Console.WriteLine(myBalance+" "+myCurrrens);
                         }
                         break;
