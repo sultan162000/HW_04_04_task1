@@ -7,29 +7,52 @@ namespace HW_04_04_task2
         static void Main(string[] args)
         {
             Converter con = new Converter(1000);
-            con.showMoney();
+            
         }
     }
 
     class Converter{
-        public double smn{get;set;}
-        public double usd{get;set;}
-        public double eur{get;set;}
-        public double rub{get;set;}
+        public double smn{get; set;}
+        public string smnOfcur= "Сомони";
 
         public Converter(double somoni){
-            this.smn = somoni;
-            usd = smn/10.25;
-            eur = smn/11.04;
-            rub = smn/0.13;
+            smn = somoni;
+            startTheProject();
         }
-        public void showMoney(){
-            System.Console.WriteLine("Сомони: "+smn);
-            System.Console.WriteLine("Доллар: "+usd);
-            System.Console.WriteLine("Евро: "+eur);
-            System.Console.WriteLine("Рубль: "+rub);
+
+        public void showMoney(double ind,string curr){
+            System.Console.WriteLine(curr+": "+ind);
         }
+
+        public void ConvertSmnToOther(){
+            System.Console.WriteLine("-----");
+        }
+
+        public void startTheProject(){
+            bool check = true;
+            while (check)
+            {
+                System.Console.WriteLine("1.Показать счет\n2.Конвертировать в валюту...\n3.Выйти из программ");
+                int x = int.Parse(Console.ReadLine());
+                switch (x)
+                {
+                    case 1:
+                    System.Console.WriteLine("---------");
+                    break;
+                    case 2:
+                    System.Console.WriteLine("----------");
+                    break;
+                    case 3:
+                    check = false;
+                    break;
+                }
+            }
+        }
+        
 
 
     }
+
+    
 }
+
