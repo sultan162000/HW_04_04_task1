@@ -12,45 +12,60 @@ namespace HW_04_04_task2
     }
 
     class Converter{
-        public double smn{get; set;}
-        public string smnOfcur= "Сомони";
+        CurrensSomoni cursmn = new CurrensSomoni();
 
         public Converter(double somoni){
-            smn = somoni;
+            
+            cursmn.smn = somoni;
             startTheProject();
         }
 
-        public void showMoney(double ind,string curr){
-            System.Console.WriteLine(curr+": "+ind);
-        }
 
-        public void ConvertSmnToOther(){
-            System.Console.WriteLine("-----");
-        }
+        
 
         public void startTheProject(){
             bool check = true;
             while (check)
             {
-                System.Console.WriteLine("1.Показать счет\n2.Конвертировать в валюту...\n3.Выйти из программ");
+                System.Console.WriteLine("1.Конверть валют\n2.Выход");
                 int x = int.Parse(Console.ReadLine());
                 switch (x)
                 {
                     case 1:
-                    System.Console.WriteLine("---------");
+                    System.Console.WriteLine("1.USD\n2.EURO\n3.RU");
+                    int n = int.Parse(Console.ReadLine());
+                    switch (n)
+                    {
+                        case 1:
+                        CurrensUsd curusd = new CurrensUsd(){usd = cursmn.smn/10.23};
+                        System.Console.WriteLine(curusd.usd);
+                        break;
+                        
+                    }
                     break;
+
                     case 2:
-                    System.Console.WriteLine("----------");
-                    break;
-                    case 3:
                     check = false;
                     break;
+                    
                 }
             }
         }
+
+
         
 
 
+    }
+
+    class CurrensSomoni{
+        public double smn{get;set;}
+        public string smnOfLatin = "Сомони";
+    
+    }
+    class CurrensUsd{
+        public double usd{get;set;}
+        public string usdOfLatin = "Доллар";
     }
 
     
